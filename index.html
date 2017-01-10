@@ -21,11 +21,62 @@
 						<h1><a href="#">COMP205P</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="#">Sign Up</a></li>
+								<li onclick="document.getElementById('id01').style.display='block'" class="menuLogin">login</li>
+								<li onclick="document.getElementById('id02').style.display='block'" class="menuLogin">Sign Up</li>
 							</ul>
 						</nav>
 					</header>
+
+					<div id="id01" class="modal">
+						<form class="modal-content animate" action="action_page.php">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      							<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    						</div>
+
+    						<div class="logcontainer">
+      							<label><b>Username</b></label>
+      							<input type="text" placeholder="Enter Username" name="uname" required>
+      							<label><b>Password</b></label>
+      							<input type="password" placeholder="Enter Password" name="psw" required>
+
+      							<input class="logbutton" type="submit" value="Login">
+      							<input type="checkbox" name="remember" value="yeah" checked> Remember me
+    						</div>
+
+    						<div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="logcancelbtn">Cancel</button>
+      						<span class="psw" style="padding-right: 20px;"> <a href="#">Forgot Password</a></span>
+    						</div>
+  						</form>
+					</div>
+
+					<div id="id02" class="modal">
+						<form class="modal-content animate" action="action_page.php">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      							<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    						</div>
+
+    						<div class="logcontainer">
+      							<label><b>Username</b></label>
+      							<input type="text" placeholder="Enter Username" name="uname" required>
+								<label><b>Email</b></label>
+      							<input type="text" placeholder="Enter Email" name="email" required>
+      							<label><b>Password</b></label>
+      							<input type="password" placeholder="Enter Password" name="psw" required>
+								<label><b>Confirm Password</b></label>
+      							<input type="password" placeholder="Re-Enter Password" name="psw" required>
+
+      							<input class="logbutton" type="submit" value="SignUp">
+
+    						</div>
+
+    						<div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id02').style.display='none'" class="logcancelbtn">Cancel</button>
+    						</div>
+  						</form>
+					</div>
 
 				<!-- Menu -->
 					<section id="menu">
@@ -86,11 +137,11 @@
 										<h2><a href="#">USER 1</a></h2>
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
-									
+
 								</header>
-								
+
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								
+
 							</article>
 
 						<!-- Post -->
@@ -100,11 +151,11 @@
 										<h2><a href="#">User 2</a></h2>
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
-									
+
 								</header>
-								
+
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
-								
+
 							</article>
 
 						<!-- Post -->
@@ -114,23 +165,23 @@
 										<h2><a href="#">User 3</a></h2>
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
-									
+
 								</header>
-								
+
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Cras vehicula tellus eu ligula viverra, ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p>
-								
-							</article>						
+
+							</article>
 
 					</div>
 
-				
 
-					
+
+
 						<!-- About -->
-						
+
 
 						<!-- Footer -->
-						
+
 
 					</section>
 
@@ -142,6 +193,16 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Get the modal
+				var modal = document.getElementById('id01');
 
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+    				if (event.target == modal) {
+        				modal.style.display = "none";
+    				}
+				}
+			</script>
 	</body>
 </html>
