@@ -37,9 +37,9 @@
 
     						<div class="logcontainer">
       							<label><b>Username</b></label>
-      							<input type="text" placeholder="Enter Username" id="username" name="username">
+      							<input type="text" placeholder="Enter Username" id="logUsername" name="logUsername">
       							<label><b>Password</b></label>
-      							<input type="password" placeholder="Enter Password" id="password" name="password">
+      							<input type="password" placeholder="Enter Password" id="logPassword" name="logPassword">
 
       							<input class="logbutton" type="submit" id="submit1" name="submit1" value="Login">
       							<input type="checkbox" name="remember" value="yeah" checked> Remember me
@@ -92,9 +92,9 @@
 								<label><b>Email</b></label>
       							<input type="text" placeholder="Enter Email" name="email" required>
       							<label><b>Password</b></label>
-      							<input type="password" placeholder="Enter Password" name="password" required>
+      							<input type="password" placeholder="Enter Password" name="" required>
 								<label><b>Confirm Password</b></label>
-      							<input type="password" placeholder="Re-Enter Password" name="confirmPassword" required>
+      							<input type="password" placeholder="Re-Enter Password" name="" required>
 
       							<input class="logbutton" type="submit" value="SignUp">
 
@@ -228,21 +228,13 @@
 				$("#submit1").click(function(){
 					$('#logForm').validate({
 						rules: {
-							username: {
+							logUsername: {
 								minlength: 2,
 								required: true
 							},
-							email: {
-								required: true,
-								email: true
-							},
-							password: {
+							logPassword: {
 								minlength: 2,
 								required: true
-							},
-							confirmPassword: {
-								required: true,
-								equalTo: "#password"
 							}
 						},
 					});
