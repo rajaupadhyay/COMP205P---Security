@@ -21,15 +21,15 @@
 						<h1><a href="#">COMP205P</a></h1>
 						<nav class="links">
 							<ul>
-								<li onclick="document.getElementById('id01').style.display='block'" class="menuLogin">login</li>
-								<li onclick="document.getElementById('id02').style.display='block'" class="menuLogin">Sign Up</li>
-								<li onclick="document.getElementById('id03').style.display='block'" class="menuLogin">Settings</li>
+								<li id="li1" class="menuLogin">login</li>
+								<li id="li2" class="menuLogin">Sign Up</li>
+								<li id="li3" class="menuLogin">Settings</li>
 							</ul>
 						</nav>
 					</header>
 
 					<div id="id01" class="modal">
-						<form class="modal-content animate" action="action_page.php">
+						<form id="logForm" class="modal-content animate" action="">
     						<div class="imgcontainer">
       							<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       							<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
@@ -37,11 +37,11 @@
 
     						<div class="logcontainer">
       							<label><b>Username</b></label>
-      							<input type="text" placeholder="Enter Username" name="uname" required>
+      							<input type="text" placeholder="Enter Username" id="username" name="username">
       							<label><b>Password</b></label>
-      							<input type="password" placeholder="Enter Password" name="psw" required>
+      							<input type="password" placeholder="Enter Password" id="password" name="password">
 
-      							<input class="logbutton" type="submit" value="Login">
+      							<input class="logbutton" type="submit" id="submit1" name="submit1" value="Login">
       							<input type="checkbox" name="remember" value="yeah" checked> Remember me
     						</div>
 
@@ -61,15 +61,15 @@
 
     						<div class="logcontainer">
       							<label><b>Username</b></label>
-      							<input type="text" placeholder="Enter Username" id="username" name="username" required>
+      							<input type="text" placeholder="Enter Username" id="username" name="username">
 								<label><b>Email</b></label>
-      							<input type="text" placeholder="Enter Email" id="email" name="email" required>
+      							<input type="text" placeholder="Enter Email" id="email" name="email">
       							<label><b>Password</b></label>
-      							<input type="password" placeholder="Enter Password" class="form-control" id="password" name="password" required>
+      							<input type="password" placeholder="Enter Password" class="form-control" id="password" name="password">
 								<label><b>Confirm Password</b></label>
-      							<input type="password" placeholder="Re-Enter Password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+      							<input type="password" placeholder="Re-Enter Password" class="form-control" id="confirmPassword" name="confirmPassword">
 
-      							<input class="logbutton" type="submit" id="submit" name="submit" value="SignUp">
+      							<input class="logbutton" type="submit" id="submit2" name="submit2" value="SignUp">
 
     						</div>
 
@@ -222,21 +222,26 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
+
 			<script>
 			$(function() {
-				$("#submit").click(function(){
-					$('#signUpForm').validate({
+				$("#submit1").click(function(){
+					$('#logForm').validate({
 						rules: {
 							username: {
 								minlength: 2,
+								required: true
 							},
 							email: {
+								required: true,
 								email: true
 							},
 							password: {
 								minlength: 2,
+								required: true
 							},
 							confirmPassword: {
+								required: true,
 								equalTo: "#password"
 							}
 						},
@@ -244,6 +249,52 @@
 				});
 			});
 			</script>
+
+			<script>
+			$(function() {
+				$("#submit2").click(function(){
+					$('#signUpForm').validate({
+						rules: {
+							username: {
+								minlength: 2,
+								required: true
+							},
+							email: {
+								required: true,
+								email: true
+							},
+							password: {
+								minlength: 2,
+								required: true
+							},
+							confirmPassword: {
+								required: true,
+								equalTo: "#password"
+							}
+						},
+					});
+				});
+			});
+			</script>
+
+			<script>
+			$('#li1').click(function(){
+				document.getElementById('id02').style.display='none';
+				document.getElementById('id03').style.display='none';
+				document.getElementById('id01').style.display='block';
+			});
+			$('#li2').click(function(){
+				document.getElementById('id01').style.display='none';
+				document.getElementById('id03').style.display='none';
+				document.getElementById('id02').style.display='block';
+			});
+			$('#li3').click(function(){
+				document.getElementById('id01').style.display='none';
+				document.getElementById('id02').style.display='none';
+				document.getElementById('id03').style.display='block';
+			});
+			</script>
+
 
 	</body>
 </html>
