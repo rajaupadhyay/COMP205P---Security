@@ -4,6 +4,7 @@
 	<head>
 		<title>COMP205P</title>
 		<meta charset="utf-8" />
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -24,6 +25,7 @@
 								<li id="li1" class="menuLogin">login</li>
 								<li id="li2" class="menuLogin">Sign Up</li>
 								<li id="li3" class="menuLogin">Settings</li>
+								<li id="li4" class="menuLogin">Upload</li>
 							</ul>
 						</nav>
 					</header>
@@ -47,7 +49,7 @@
 
     						<div class="container" style="background-color:#f1f1f1">
       							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="logcancelbtn">Cancel</button>
-      						<span class="psw" style="padding-right: 20px;"> <a href="#">Forgot Password</a></span>
+      						<span class="psw" style="padding-right: 20px;"> <a href="#" id="forgotPassword">Forgot Password</a></span>
     						</div>
   						</form>
 					</div>
@@ -80,23 +82,30 @@
 					</div>
 
 					<div id="id03" class="modal">
-						<form class="modal-content animate" action="action_page.php">
+						<form id="settingsForm" class="modal-content animate" action="">
     						<div class="imgcontainer">
       							<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-      							<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+								<div class = "avatarImage">
+									<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+								</div>
     						</div>
 
     						<div class="logcontainer">
-      							<label><b>Username</b></label>
-      							<input type="text" placeholder="Current Username" name="username" required>
-								<label><b>Email</b></label>
-      							<input type="text" placeholder="Enter Email" name="email" required>
-      							<label><b>Password</b></label>
-      							<input type="password" placeholder="Enter Password" name="" required>
-								<label><b>Confirm Password</b></label>
-      							<input type="password" placeholder="Re-Enter Password" name="" required>
-
-      							<input class="logbutton" type="submit" value="SignUp">
+								<label><b>Username</b></label>
+      							<input type="text" placeholder="Current Username" name="newUsername" id="newUsername"value="Current Username" required>
+								<label><b>Old Password</b></label>
+      							<input type="text" placeholder="Enter Current Password" name="oldPassword">
+      							<label><b>New Password</b></label>
+      							<input type="password" placeholder="Enter New Password" name="newPassword" id="newPassword">
+								<label><b>Confirm New Password</b></label>
+      							<input type="password" placeholder="Confirm New Password" name="confirmNewPassword" id="confirmNewPassword">
+								<label><b>Homepage</b></label>
+								<input type="text" placeholder="Homepage URL" name="homepage">
+								<label><b>Image URL</b></label>
+								<input type="text" placeholder="Image URL" name="imagURL">
+								<label><b>Profile Colour</b></label>
+								<input type="text" placeholder="Profile Colour" name="profileColour">
+      							<input class="logbutton" type="submit" id="submit3" name="submit3" value="Save">
 
     						</div>
 
@@ -106,54 +115,45 @@
   						</form>
 					</div>
 
-				<!-- Menu -->
-					<section id="menu">
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+					<div id="id04" class="modal">
+						<form class="modal-content animate" action="">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+    						</div>
 
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
-										</a>
-									</li>
-								</ul>
-							</section>
+    						<div class="logcontainer">
+								<label><b>Upload Image</b></label>
+								<input type="file" name="pic" accept="image/*">
+      							<input class="logbutton" type="submit" value="Submit">
 
-						<!-- Actions -->
-							<section>
-								<ul class="actions vertical">
-									<li><a href="#" class="button big fit">Log In</a></li>
-								</ul>
-							</section>
+    						</div>
 
-					</section>
+    						<div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id04').style.display='none'" class="logcancelbtn">Cancel</button>
+    						</div>
+  						</form>
+					</div>
+
+					<div id="id05" class="modal">
+						<form id="forgotPasswordForm" class="modal-content animate" action="">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+    						</div>
+
+    						<div class="logcontainer">
+								<label><b>Enter email</b></label>
+								<input type="text" placeholder="Email" name="passResetEmail" id="passResetEmail">
+      							<input class="logbutton" type="submit" id="submit5" name="submit5" value="Send Password Reset Request">
+
+    						</div>
+
+    						<div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id05').style.display='none'" class="logcancelbtn">Cancel</button>
+    						</div>
+  						</form>
+					</div>
+
 
 				<!-- Main -->
 					<div id="main">
@@ -229,11 +229,9 @@
 					$('#logForm').validate({
 						rules: {
 							logUsername: {
-								minlength: 2,
 								required: true
 							},
 							logPassword: {
-								minlength: 2,
 								required: true
 							}
 						},
@@ -270,20 +268,65 @@
 			</script>
 
 			<script>
+			$(function() {
+				$("#submit3").click(function(){
+					$('#settingsForm').validate({
+						rules: {
+							newUsername: {
+								minlength: 2,
+								required: true
+							},
+							confirmNewPassword: {
+								equalTo: "#newPassword"
+							}
+						},
+					});
+				});
+			});
+			</script>
+
+			<script>
+			$(function() {
+				$("#submit5").click(function(){
+					$('#forgotPasswordForm').validate({
+						rules: {
+							passResetEmail: {
+								required: true,
+								email: true
+							}
+						},
+					});
+				});
+			});
+			</script>
+
+			<script>
 			$('#li1').click(function(){
 				document.getElementById('id02').style.display='none';
 				document.getElementById('id03').style.display='none';
+				document.getElementById('id04').style.display='none';
 				document.getElementById('id01').style.display='block';
 			});
 			$('#li2').click(function(){
 				document.getElementById('id01').style.display='none';
 				document.getElementById('id03').style.display='none';
+				document.getElementById('id04').style.display='none';
 				document.getElementById('id02').style.display='block';
 			});
 			$('#li3').click(function(){
 				document.getElementById('id01').style.display='none';
 				document.getElementById('id02').style.display='none';
+				document.getElementById('id04').style.display='none';
 				document.getElementById('id03').style.display='block';
+			});
+			$('#li4').click(function(){
+				document.getElementById('id01').style.display='none';
+				document.getElementById('id02').style.display='none';
+				document.getElementById('id03').style.display='none';
+				document.getElementById('id04').style.display='block';
+			});
+			$('#forgotPassword').click(function(){
+				document.getElementById('id05').style.display='block';
 			});
 			</script>
 

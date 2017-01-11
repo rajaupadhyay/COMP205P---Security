@@ -744,7 +744,7 @@
 
 	}
 
-	@media screen and (max-width: 980px) {
+	@media screen and (max-width: 319px) {
 
 		.row > * {
 			padding: 0 0 0 1em;
@@ -1448,7 +1448,7 @@
 
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 319px) {
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -2706,7 +2706,7 @@
 							margin-right: 0.75em;
 						}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 319px) {
 
 			.post {
 				border-left: 0;
@@ -3132,7 +3132,7 @@
 				padding: 0 0.5em 0 0;
 			}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 319px) {
 
 			#header .links {
 				display: none;
@@ -3454,7 +3454,6 @@
 			}
 
 		}
-
 
 
 
