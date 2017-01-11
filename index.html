@@ -24,8 +24,6 @@
 							<ul>
 								<li id="li1" class="menuLogin">login</li>
 								<li id="li2" class="menuLogin">Sign Up</li>
-								<li id="li3" class="menuLogin">Settings</li>
-								<li id="li4" class="menuLogin">Upload</li>
 							</ul>
 						</nav>
 					</header>
@@ -81,59 +79,6 @@
   						</form>
 					</div>
 
-					<div id="id03" class="modal">
-						<form id="settingsForm" class="modal-content animate" action="">
-    						<div class="imgcontainer">
-      							<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-								<div class = "avatarImage">
-									<img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-								</div>
-    						</div>
-
-    						<div class="logcontainer">
-								<label><b>Username</b></label>
-      							<input type="text" placeholder="Current Username" name="newUsername" id="newUsername"value="Current Username" required>
-								<label><b>Old Password</b></label>
-      							<input type="text" placeholder="Enter Current Password" name="oldPassword">
-      							<label><b>New Password</b></label>
-      							<input type="password" placeholder="Enter New Password" name="newPassword" id="newPassword">
-								<label><b>Confirm New Password</b></label>
-      							<input type="password" placeholder="Confirm New Password" name="confirmNewPassword" id="confirmNewPassword">
-								<label><b>Homepage</b></label>
-								<input type="text" placeholder="Homepage URL" name="homepage">
-								<label><b>Image URL</b></label>
-								<input type="text" placeholder="Image URL" name="imagURL">
-								<label><b>Profile Colour</b></label>
-								<input type="text" placeholder="Profile Colour" name="profileColour">
-      							<input class="logbutton" type="submit" id="submit3" name="submit3" value="Save">
-
-    						</div>
-
-    						<div class="container" style="background-color:#f1f1f1">
-      							<button type="button" onclick="document.getElementById('id03').style.display='none'" class="logcancelbtn">Cancel</button>
-    						</div>
-  						</form>
-					</div>
-
-
-					<div id="id04" class="modal">
-						<form class="modal-content animate" action="">
-    						<div class="imgcontainer">
-      							<span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
-    						</div>
-
-    						<div class="logcontainer">
-								<label><b>Upload Image</b></label>
-								<input type="file" name="pic" accept="image/*">
-      							<input class="logbutton" type="submit" value="Submit">
-
-    						</div>
-
-    						<div class="container" style="background-color:#f1f1f1">
-      							<button type="button" onclick="document.getElementById('id04').style.display='none'" class="logcancelbtn">Cancel</button>
-    						</div>
-  						</form>
-					</div>
 
 					<div id="id05" class="modal">
 						<form id="forgotPasswordForm" class="modal-content animate" action="">
@@ -269,24 +214,6 @@
 
 			<script>
 			$(function() {
-				$("#submit3").click(function(){
-					$('#settingsForm').validate({
-						rules: {
-							newUsername: {
-								minlength: 2,
-								required: true
-							},
-							confirmNewPassword: {
-								equalTo: "#newPassword"
-							}
-						},
-					});
-				});
-			});
-			</script>
-
-			<script>
-			$(function() {
 				$("#submit5").click(function(){
 					$('#forgotPasswordForm').validate({
 						rules: {
@@ -303,27 +230,11 @@
 			<script>
 			$('#li1').click(function(){
 				document.getElementById('id02').style.display='none';
-				document.getElementById('id03').style.display='none';
-				document.getElementById('id04').style.display='none';
 				document.getElementById('id01').style.display='block';
 			});
 			$('#li2').click(function(){
 				document.getElementById('id01').style.display='none';
-				document.getElementById('id03').style.display='none';
-				document.getElementById('id04').style.display='none';
 				document.getElementById('id02').style.display='block';
-			});
-			$('#li3').click(function(){
-				document.getElementById('id01').style.display='none';
-				document.getElementById('id02').style.display='none';
-				document.getElementById('id04').style.display='none';
-				document.getElementById('id03').style.display='block';
-			});
-			$('#li4').click(function(){
-				document.getElementById('id01').style.display='none';
-				document.getElementById('id02').style.display='none';
-				document.getElementById('id03').style.display='none';
-				document.getElementById('id04').style.display='block';
 			});
 			$('#forgotPassword').click(function(){
 				document.getElementById('id05').style.display='block';
